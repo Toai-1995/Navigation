@@ -7,7 +7,7 @@ export const getDataSlice = createSlice({
   initialState,
   reducers: {
     getData: (state, action) => {
-      state.repos = state.repos.concat(action.payload);
+      state.repos = action.payload;
     },
     loadMore: (state, action) => {
       state.repos = state.repos.push(action.payload);
