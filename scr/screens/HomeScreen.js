@@ -7,7 +7,7 @@ import {
   FlatList,
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../store/slice/getDataSlice";
+import { getData, loadMore } from "../store/slice/getDataSlice";
 import DataGit from "../api/DataGit";
 
 const HomeScreen = props => {
@@ -23,6 +23,7 @@ const HomeScreen = props => {
     DataGit.get(username, 1)
       .then(res => {
         setRepos(res);
+        dispatch(getData(res))
         if(res.length === 30){
           setLoadmore(true)
           setPage(page + 1)
@@ -32,10 +33,10 @@ const HomeScreen = props => {
   };
 
   const pressLoadmore = () => {
-    console.log(page);
     DataGit.get(username,page)
       .then(res => {
         setRepos(repos.concat(res));
+        dispatch(loadMore(res))
         if(res.length === 30){
           setLoadmore(true)
           setPage(page + 1)

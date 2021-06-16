@@ -19,11 +19,12 @@ const AppNavigation = () =>{
           headerTitleStyle: {
             fontWeight: 'bold',
           },
-        }}>
+        }}
+        >
         <AppStack.Screen
           name="Home"
           component={HomeScreen}
-          options={{title: 'My home'}}
+          options={{title: 'Home'}}
         />
         <AppStack.Screen
           name="Details"

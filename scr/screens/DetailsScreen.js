@@ -25,15 +25,15 @@ const DetailsScreen = props => {
   }
   console.log('star',stargazer);
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    <View>
       <FlatList
         data={stargazer}
         renderItem={({ item }) =>  renderItemsStar(item)}
       />
-      <Button
-        title="Go to home"
-        onPress={() => navigation.navigate('Home')}
-      />
+      {/*<Button*/}
+      {/*  title="Go to home"*/}
+      {/*  onPress={() => navigation.navigate('Home')}*/}
+      {/*/>*/}
     </View>
   );
 };

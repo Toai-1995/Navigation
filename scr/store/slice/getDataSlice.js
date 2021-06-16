@@ -10,7 +10,7 @@ export const getDataSlice = createSlice({
       state.repos = action.payload;
     },
     loadMore: (state, action) => {
-      state.repos = state.repos.push(action.payload);
+      state.repos = state.repos.concat(action.payload);
     },
   },
 });
